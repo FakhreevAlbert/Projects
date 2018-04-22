@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12" align="center">
+      <img src="http://www.reepl.ru/img/eidos-logo.png">
+    </div>
+
+  </div>
+  <nav>
+    <div class="nav-wrapper">
+      <a  class="brand-logo">Список менеджеров</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a routerLink="/employees">Сотрудники</a></li>
+        <li><a routerLink="/departments">Отделы</a></li>
+        <li><a routerLink="/managers">Менеджеры</a></li>
+        <li><a routerLink="/auth/login"><i class="material-icons" (click)="onLogout()">exit_to_app</i></a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="col s12 m6" *ngFor="let manager of managers">
+
+    <app-manager-card
+      [manager]="manager"
+      (remove)="onRemove(manager.id)"
+      (edit)="modal.onEdit(manager.id)"
+
+    ></app-manager-card>
+  </div>
+</div>
+<a class="c-fixed-fab btn-floating btn-large waves-effect waves-light red" (click)="modal.onAdd()"><i class="material-icons">add</i></a>
+
+<app-manager-edit-modal #modal (save)="onSave()"></app-manager-edit-modal>
+
+

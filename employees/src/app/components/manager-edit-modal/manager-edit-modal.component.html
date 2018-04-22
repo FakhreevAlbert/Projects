@@ -1,0 +1,173 @@
+<!-- Modal Structure -->
+<div id="managerEditModal" class="modal" xmlns="http://www.w3.org/1999/html">
+  <div class="modal-content">
+    <h4>Manager Details</h4>
+    <div class="row">
+      <form class="col s12" #managerEditForm="ngForm">
+        <div class="row">
+          <div class="input-field col s6">
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Name"
+              required
+              minlength="4"
+              #name="ngModel"
+              [(ngModel)]="manager.name"
+              [class.valid]="name.valid && (name.dirty || name.touched)"
+              [class.invalid]="name.invalid && (name.dirty || name.touched)"
+            >
+            <label class="active" for="name">Name</label>
+            <div *ngIf="name.invalid && (name.dirty || name.touched)">
+              <p *ngIf="name.errors?.required">Заполните поле</p>
+              <p *ngIf="name.errors?.minlength">Имя не должно содержать менее {{name.errors.minlength.requiredLength}} символов</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input
+              id="lastname"
+              name="lastname"
+              type="text"
+              placeholder="Lastname"
+              required
+              minlength="2"
+              #lastname="ngModel"
+              [(ngModel)]="manager.lastname"
+              [class.valid]="lastname.valid && (lastname.dirty || lastname.touched)"
+              [class.invalid]="lastname.invalid && (lastname.dirty || lastname.touched)"
+            >
+            <label class="active" for="lastname">Lastname</label>
+            <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
+              <p *ngIf="lastname.errors?.required">Заполните поле</p>
+              <p *ngIf="lastname.errors?.minlength">Фамилия не должна содержать менее {{lastname.errors.minlength.requiredLength}} символов</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input
+              id="dateOfBirth"
+              name="dateOfBirth"
+              type="text"
+              placeholder="DateOfBirth"
+              required
+              minlength="10"
+              #dateOfBirth="ngModel"
+              [(ngModel)]="manager.dateOfBirth"
+              [class.valid]="dateOfBirth.valid && (dateOfBirth.dirty || dateOfBirth.touched)"
+              [class.invalid]="dateOfBirth.invalid && (dateOfBirth.dirty || dateOfBirth.touched)"
+            >
+            <label class="active" for="dateOfBirth">Date of birth</label>
+            <div *ngIf="dateOfBirth.invalid && (dateOfBirth.dirty || dateOfBirth.touched)">
+              <p *ngIf="dateOfBirth.errors?.required">Заполните поле в формате 23.04.2018</p>
+              <p *ngIf="dateOfBirth.errors?.minlength">Дата не должна содержать менее {{dateOfBirth.errors.minlength.requiredLength}} символов</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input
+              id="phoneNumber"
+              name="phoneNumber"
+              type="text"
+              placeholder="PhoneNumber"
+              required
+              minlength="11"
+              #phoneNumber="ngModel"
+              [(ngModel)]="manager.phoneNumber"
+              [class.valid]="phoneNumber.valid && (phoneNumber.dirty || phoneNumber.touched)"
+              [class.invalid]="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)"
+            >
+            <label class="active" for="phoneNumber">Phone number</label>
+            <div *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)">
+              <p *ngIf="phoneNumber.errors?.required">Заполните поле в формате +7(927)321-11-11</p>
+              <p *ngIf="phoneNumber.errors?.minlength">Номер телефона не должен содержать менее {{phoneNumber.errors.minlength.requiredLength}} символов</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input
+              id="imageUrl"
+              name="imageUrl"
+              type="text"
+              placeholder="ImageUrl"
+              required
+              #imageUrl="ngModel"
+              [(ngModel)]="manager.imageUrl"
+              [class.valid]="imageUrl.valid && (imageUrl.dirty || imageUrl.touched)"
+              [class.invalid]="imageUrl.invalid && (imageUrl.dirty || imageUrl.touched)"
+            >
+            <label class="active" for="imageUrl">Image URL</label>
+            <div *ngIf="imageUrl.invalid && (imageUrl.dirty || imageUrl.touched)">
+              <p *ngIf="imageUrl.errors?.required">Заполните поле</p>
+            </div>
+          </div>
+
+
+        </div>
+        <form action="#">
+        <div  *ngFor="let department of departments">
+          <p>
+            <input name="departmentId" type="radio" id="{{department.id}}" [value]="department.id" [(ngModel)]="departmentId"/>
+            <label for="{{department.id}}">{{department.name}}</label>
+          </p>
+
+
+        </div>
+        </form>
+
+
+
+
+        <!--<div class="row">-->
+
+
+
+          <!--<p>-->
+            <!--<input class="with-gap" name="departmentId" type="radio" id="16" [value]="16" [(ngModel)]="departmentId"/>-->
+            <!--<label for="16">Станочный</label>-->
+          <!--</p>-->
+          <!--<p>-->
+            <!--<input class="with-gap" name="departmentId" type="radio" id="17" [value]="17" [(ngModel)]="departmentId" />-->
+            <!--<label for="17">Литейный</label>-->
+          <!--</p>-->
+          <!--<p>-->
+            <!--<input class="with-gap" name="departmentId" type="radio" id="22" [value]="22" [(ngModel)]="departmentId" />-->
+            <!--<label for="22">Слесарный</label>-->
+          <!--</p>-->
+          <!--<p>-->
+            <!--<input class="with-gap" name="departmentId" type="radio" id="20" [value]="20" [(ngModel)]="departmentId" />-->
+            <!--<label for="20">Сборочный</label>-->
+          <!--</p>-->
+          <!--<p>-->
+            <!--<input class="with-gap" name="departmentId" type="radio" id="32" [value]="32" [(ngModel)]="departmentId" />-->
+            <!--<label for="32">Тестировочный</label>-->
+          <!--</p>-->
+          <!--<p>-->
+            <!--<input class="with-gap" name="departmentId" type="radio" id="28" [value]="28" [(ngModel)]="departmentId" />-->
+            <!--<label for="28">Робототехника</label>-->
+          <!--</p>-->
+
+
+        <!--</div>-->
+
+
+
+
+
+      </form>
+
+    </div>
+
+
+    <div class="modal-footer">
+      <button class="modal-action waves-effect waves-green btn-flat" (click)="onCancel()">Cancel</button>
+      <button class="modal-action waves-effect waves-green btn-flat" (click)="onSave()" [disabled]="managerEditForm.form.invalid">Save</button>
+    </div>
+  </div>
+</div>
+

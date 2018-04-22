@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row" >
+    <form class="col s12" #loginForm="ngForm">
+      <div class="row">
+        <div class="input-field col s12">
+          <input
+            id="login"
+            name="login"
+            type="text"
+            placeholder="login"
+            required
+            minlength="5"
+            #login="ngModel"
+            [(ngModel)]="auth.login"
+            [class.valid]="login.valid && (login.dirty || login.touched)"
+            [class.invalid]="login.invalid && (login.dirty || login.touched)"
+          >
+          <label class="active" for="login">Login</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="password"
+            required
+            minlength="5"
+            #password="ngModel"
+            [(ngModel)]="auth.password"
+            [class.valid]="password.valid && (password.dirty || password.touched)"
+            [class.invalid]="password.invalid && (password.dirty || password.touched)"
+          >
+          <label class="active" for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <button class="modal-action waves-effect waves-green btn-flat" (click)="onLogin()" [disabled]="loginForm.form.invalid">Login</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
