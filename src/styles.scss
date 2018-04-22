@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+.c-fixed-fab {
+  position: fixed;
+  z-index: 99;
+  bottom: 28px;
+  right: 28px;
+}
+.c-edit-fab {
+  position: center;
+  bottom: 0px;
+  right: 0px;
+}
+a{
+  cursor: pointer;
+  user-select: none;
+}
+.card-content {
+  font-size: 110%;
+  color: #f50057
+}
+.tiny{
+  color: #f44336
+}
