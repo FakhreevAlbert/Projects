@@ -28,12 +28,12 @@ public class DepartmentServiceImpl implements DepartmentService {
         this.managerRepository = managerRepository;
         this.employeeRepository = employeeRepository;
     }
-    @Transactional
+
     @Override
     public List<Department>  findAll(){
         return departmentRepository.findAll();
     }
-    @Transactional
+
     @Override
     public Department findById(int id){
         return departmentRepository.findById(id).orElseThrow(DepartmentNotFoundException::new);
@@ -69,7 +69,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     }
 
-    @Transactional
+
     @Override
     public List<EmployeeDTO> findAllEmployees(int id) {
         Department department = departmentRepository.findById(id).orElseThrow(DepartmentNotFoundException::new);
@@ -88,7 +88,7 @@ public class DepartmentServiceImpl implements DepartmentService {
                     )).collect(Collectors.toList());
 
     }
-    @Transactional
+
     @Override
     public List<ManagerDTO> findManager(int id) {
         Department department = departmentRepository.findById(id).orElseThrow(DepartmentNotFoundException::new);

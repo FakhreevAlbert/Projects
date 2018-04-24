@@ -23,12 +23,12 @@ public class ManagerServiceImpl implements ManagerService {
         this.managerRepository = managerRepository;
         this.departmentRepository = departmentRepository;
     }
-    @Transactional
+
     @Override
     public List<Manager> findAll(){
         return managerRepository.findAll();
     }
-    @Transactional
+
     @Override
     public Manager findById(int id){
         return managerRepository.findById(id).orElseThrow(ManagerNotFounException::new);

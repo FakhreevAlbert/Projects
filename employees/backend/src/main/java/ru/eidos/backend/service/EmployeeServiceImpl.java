@@ -23,12 +23,12 @@ public class EmployeeServiceImpl implements EmployeeService {
         this.employeeRepository = employeeRepository;
         this.departmentRepository = departmentRepository;
     }
-    @Transactional
+
     @Override
     public List<Employee> findAll(){
         return employeeRepository.findAll();
     }
-    @Transactional
+    
     @Override
     public Employee findById(int id){
 
