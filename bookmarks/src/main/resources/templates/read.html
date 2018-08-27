@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Прочитано</title>
+    <style>
+        .b1{
+            background: red;
+            color: white;
+            position: absolute;
+            right: 20px;
+        }
+        .b2{
+            background: darkcyan;
+            color: white;
+            position: absolute;
+            right: 100px;
+        }
+    </style>
+    <link data-th-href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet">
+    <link rel="stylesheet"
+          data-th-href="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css}">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo center">Прочитано</a>
+                    <ul class="left hide-on-med-and-down">
+                       <li><a href="/bookmarks">Прочитать</a></li>
+                        <li><a href="/bookmarks/read">Прочитано</a></li>
+                        <li ><a href="/bookmarks/find">Поиск</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <ul class="collection">
+                <li class="collection-item" data-th-each="bookmark : ${bookmarks}">
+                    <form data-th-action="@{/bookmarks/read/{id}/delete(id=${bookmark.id})}" method="post">
+                        <button  type="submit" data-th-value="${bookmark.id}" data-th-name="${bookmark.id}" class="b1">Удалить</button>
+                    </form>
+                    <form data-th-action="@{/bookmarks/read/{id}(id=${bookmark.id})}" method="post">
+                        <button  type="submit" data-th-value="${bookmark.id}" data-th-name="${bookmark.id}" class="b2">Прочитать</button>
+                    </form>
+                    <a data-th-href="@{{description}(description=${bookmark.description})}">
+                        <span data-th-text="${bookmark.name}"></span>
+                    </a>
+                    <span data-th-text="${bookmark.tag}"></span>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" data-th-src="@{https://code.jquery.com/jquery-3.2.1.min.js}"></script>
+<script data-th-src="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js}"></script>
+</body>
+</html>

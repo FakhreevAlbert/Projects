@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Поиск</title>
+    <link data-th-href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet">
+    <link rel="stylesheet"
+          data-th-href="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css}">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo center">Поиск</a>
+                    <ul class="left hide-on-med-and-down">
+                        <li><a href="/bookmarks">Прочитать</a></li>
+                        <li><a href="/bookmarks/read">Прочитано</a></li>
+                        <li><a href="/bookmarks/find">Поиск</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <form action="/bookmarks/find" method="get">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="tag" name="tag" type="text" required>
+                                <label for="tag">Тэг</label>
+                                <button class="waves-effect waves-light btn" type="submit">Поиск</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <ul class="collection">
+                    <li class="collection-item" data-th-each="bookmark : ${bookmarks}">
+                        <a data-th-href="@{{description}(description=${bookmark.description})}">
+                            <span data-th-text="${bookmark.name}"></span>
+                        </a>
+                        <span data-th-text="${bookmark.tag}"></span>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" data-th-src="@{https://code.jquery.com/jquery-3.2.1.min.js}"></script>
+<script data-th-src="@{https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js}"></script>
+</body>
+</html>
