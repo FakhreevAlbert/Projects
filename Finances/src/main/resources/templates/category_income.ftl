@@ -23,12 +23,37 @@
     <form action="/finances/add" method="post">
         <table cellpadding="10" bgcolor="#b0e0e6" align="center" width="100%">
             <tr>
-                <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none" href="http://localhost:8080/category_income?category=SHOP" </a>Магазин</th>
-                <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none" href="http://localhost:8080/category_income?category=AUTO" </a>Авто</th>
-                <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none" href="http://localhost:8080/category_income?category=ENTERTAINMENT"</a> Развлечения</th>
-                <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none" href="http://localhost:8080/category_income?category=COMMUNAL"</a> Коммунальные платежи</th>
-                <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none" href="http://localhost:8080/category_income?category=MEDIA"</a> Медиа</th>
-                <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none" href="http://localhost:8080/category_income?category=OTHER"</a> Другое</th>
+                <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none"
+                                                              href="http://localhost:8081/category_income?category=SHOP" </a>
+                    Магазин
+                </th>
+                <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none"
+                                                              href="http://localhost:8081/category_income?category=AUTO" </a>
+                    Авто
+                </th>
+                <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none"
+                                                              href="http://localhost:8081/category_income?category=ENTERTAINMENT"</a>
+                    Развлечения
+                </th>
+                <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none"
+                                                              href="http://localhost:8081/category_income?category=COMMUNAL"</a>
+                    Коммунальные платежи
+                </th>
+                <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none"
+                                                              href="http://localhost:8081/category_income?category=MEDIA"</a>
+                    Медиа
+                </th>
+                <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none"
+                                                              href="http://localhost:8081/category_income?category=OTHER"</a>
+                    Другое
+                </th>
+                <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none"
+                                                              href="http://localhost:8081/add_finance"</a> Добавить
+                </th>
+                <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none"
+                                                              href="http://localhost:8081/category_income_sort?sort=ALL"</a>
+                    Общее
+                </th>
             </tr>
 
         </table>
