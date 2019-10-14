@@ -16,6 +16,7 @@
         }
 
     </style>
+    <script src="myFunctions.js"></script>
 </head>
 <body>
 <div class="finance_category" align="center">
@@ -25,11 +26,13 @@
         <table cellpadding="10" bgcolor="#b0e0e6" align="center" width="100%">
             <tr>
                 <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none"
-                                                              href="http://localhost:8081/category_income_sort?sort=ALL" </a>
+                                                              href="http://localhost:8081/category_income_sort?sort=ALL"
+                                                              onclick="setAll()" </a>
                     Доходы
                 </th>
                 <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none"
-                                                              href="http://localhost:8081/category_consumption_sort?sort=ALL" </a>
+                                                              href="http://localhost:8081/category_consumption_sort?sort=ALL"
+                                                              onclick="setAll()" </a>
                     Расходы
                 </th>
                 <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none"
@@ -45,20 +48,28 @@
         <table cellpadding="10" bgcolor="#b0e0e6" align="center" width="100%">
             <tr>
                 <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none"
-                                                              href="http://localhost:8081/category_consumption_sort?sort=DAY" </a>
+                                                              href="http://localhost:8081/category_consumption_sort?sort=DAY"
+                                                              onclick="f('DAY')" </a>
                     День
                 </th>
                 <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none"
-                                                              href="http://localhost:8081/category_consumption_sort?sort=WEEK" </a>
+                                                              href="http://localhost:8081/category_consumption_sort?sort=WEEK"
+                                                              onclick="f('WEEK')"</a>
                     Неделя
                 </th>
                 <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none"
-                                                              href="http://localhost:8081/category_consumption_sort?sort=MONTH"</a>
+                                                              href="http://localhost:8081/category_consumption_sort?sort=MONTH"
+                                                              onclick="f('MONTH')"</a>
                     Месяц
                 </th>
                 <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none"
-                                                              href="http://localhost:8081/category_consumption_sort?sort=YEAR"</a>
+                                                              href="http://localhost:8081/category_consumption_sort?sort=YEAR"
+                                                              onclick="f('YEAR')"</a>
                     Год
+                </th>
+                <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none"
+                                                              onclick="getSort('ConsumptionReport')" </a>
+                    Отчет
                 </th>
             </tr>
         </table>

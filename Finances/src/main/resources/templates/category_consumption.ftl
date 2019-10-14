@@ -15,6 +15,7 @@
         }
 
     </style>
+    <script src="myFunctions.js"></script>
 </head>
 <body>
 <div class="finance_category" align="center">
@@ -51,7 +52,8 @@
                                                               href="http://localhost:8081/add_finance"</a> Добавить
                 </th>
                 <th height="40" width="110" align="center"><a style="color: #FFFFFF;text-decoration: none"
-                                                              href="http://localhost:8081/category_consumption_sort?sort=ALL"</a>
+                                                              href="http://localhost:8081/category_consumption_sort?sort=ALL"
+                                                              onclick="setAll()" </a>
                     Общее
                 </th>
             </tr>

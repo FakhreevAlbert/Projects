@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="finance_db@localhost">
-  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.4">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.11">
     <root id="1"/>
     <database id="2" parent="1" name="finance_db">
       <ObjectId>16433</ObjectId>
@@ -47,41 +47,41 @@
     </table>
     <column id="13" parent="12" name="id">
       <Position>1</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>687</StateNumber>
-      <SequenceName>finances_db_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;finances_db_id_seq&apos;::regclass)</DefaultExpression>
+      <SequenceName>finances_db_id_seq</SequenceName>
     </column>
     <column id="14" parent="12" name="category_type">
       <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <StateNumber>687</StateNumber>
     </column>
     <column id="15" parent="12" name="finance_type">
       <Position>3</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <StateNumber>687</StateNumber>
     </column>
     <column id="16" parent="12" name="sum">
       <Position>4</Position>
-      <DataType>integer|0</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>687</StateNumber>
     </column>
     <column id="17" parent="12" name="time">
       <Position>5</Position>
-      <DataType>timestamp|0</DataType>
+      <DataType>timestamp|0s</DataType>
       <StateNumber>687</StateNumber>
     </column>
     <column id="18" parent="12" name="string_time">
       <Position>6</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <StateNumber>697</StateNumber>
     </column>
     <column id="19" parent="12" name="description">
       <Position>7</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <StateNumber>703</StateNumber>
     </column>
     <index id="20" parent="12" name="finances_db_pkey">

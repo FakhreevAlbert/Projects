@@ -23,7 +23,7 @@
 <div class="finance_form" align="center">
     <form action="/finances/add" method="post">
 
-        <input type="radio" name="financeType" id="income" value="INCOME" placeholder="Доходы">
+        <input type="radio" name="financeType" id="income" value="INCOME" placeholder="Доходы" checked>
         <label for="income">Доходы</label>
         <br>
         <input type="radio" name="financeType" id="consumption" value="CONSUMPTION" placeholder="Расходы">
@@ -31,16 +31,17 @@
         <br>
         <br>
             <label>Значение</label>
-            <input type="number" id="number" name="sum" placeholder="Число">
+        <input type="number" id="number" name="sum" placeholder="Число" required>
         <br>
             <label>Описание</label>
         <br><br>
-           <input type="text" width="200" id="text" name="description" placeholder="Текст">
+        <input type="text" width="200" id="text" name="description" placeholder="Текст" required>
 
         <p>
             <label>Категория:</label>
         </p>
         <p>
+
             <label>
                 <input type="radio" name="categoryType" id="shop" value="SHOP" placeholder="Магазин">
                 Магазин
@@ -64,17 +65,17 @@
             </label>
             <br>
             <label>
-                <input type="radio" name="categoryType" id="other" value="OTHER" placeholder="Другое">
+                <input type="radio" name="categoryType" id="other" value="OTHER" placeholder="Другое" checked>
                 Другое
             </label>
         </p>
         <p>
             <input type="submit" id="save" value="Сохранить">
         </p>
-        <a href="http://localhost:8080/category_income?category=OTHER">Общая сумма доходов: </a>
+        <a href="http://localhost:8081/category_income?category=OTHER">Общая сумма доходов: </a>
         <h1>${model.sumIncome}</h1>
         <br>
-        <a href="http://localhost:8080/category_consumption?category=SHOP">Общая сумма расходов: </a>
+        <a href="http://localhost:8081/category_consumption?category=SHOP">Общая сумма расходов: </a>
         <h1> ${model.sumConsumption}</h1>
 
 

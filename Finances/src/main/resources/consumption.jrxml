@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="consumption" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20"
+              topMargin="20" bottomMargin="20" uuid="71823e5d-11b7-4f1c-ad5e-7e3744621d0a">
+    <!--<property name="com.jaspersoft.studio.data.sql.tables" value=""/>-->
+    <!--<property name="com.jaspersoft.studio.data.defaultdataadapter" value="finance_db"/>-->
+    <!--<queryString language="SQL">-->
+    <!--<![CDATA[SELECT *-->
+    <!--FROM finances_db where "finance_type" = 'CONSUMPTION'  order by time desc]]>-->
+    <!--</queryString>-->
+    <field name="id" class="java.lang.Integer">
+    </field>
+    <field name="categoryType" class="java.lang.String">
+    </field>
+    <field name="description" class="java.lang.String">
+    </field>
+    <field name="financeType" class="java.lang.String">
+    </field>
+    <field name="stringTime" class="java.lang.String">
+    </field>
+    <field name="sum" class="java.lang.Integer">
+    </field>
+    <field name="time" class="java.sql.Timestamp">
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="240" splitType="Stretch">
+            <pieChart>
+                <chart evaluationTime="Report">
+                    <reportElement x="110" y="20" width="320" height="200" uuid="a9645199-24c3-4770-9d22-f32f4530e874"/>
+                    <chartTitle/>
+                    <chartSubtitle/>
+                    <chartLegend/>
+                </chart>
+                <pieDataset maxCount="20" minPercentage="0.0">
+                    <keyExpression><![CDATA[$F{sum}]]></keyExpression>
+                    <valueExpression><![CDATA[$F{sum}]]></valueExpression>
+                    <labelExpression><![CDATA[$F{description}]]></labelExpression>
+                    <otherLabelExpression><![CDATA[]]></otherLabelExpression>
+                </pieDataset>
+                <piePlot>
+                    <plot/>
+                    <itemLabel/>
+                </piePlot>
+            </pieChart>
+        </band>
+    </title>
+    <columnHeader>
+        <band height="35" splitType="Stretch">
+            <staticText>
+                <reportElement x="100" y="0" width="80" height="30" uuid="dba047c7-2bd3-40a3-961c-cdcb9654a036">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID"
+                              value="b51e232b-b252-4d63-8243-872b3afed432"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font fontName="DejaVu Sans" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Описание]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="280" y="0" width="100" height="30" uuid="7f1b898a-2cf9-4801-afcb-9fc350e797b8">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID"
+                              value="7ffe3e7e-2a0d-4545-8de9-412c82c1b4e9"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font fontName="DejaVu Sans" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Дата]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="380" y="0" width="100" height="30" uuid="9bc4dd34-e461-44c1-8059-274d53419f01">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID"
+                              value="76e994f4-a580-4be9-b9ce-34b6d1c7b4fe"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font fontName="DejaVu Sans" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Итого]]></text>
+            </staticText>
+            <line>
+                <reportElement positionType="Float" x="80" y="20" width="400" height="1"
+                               uuid="d601b8b0-ca6d-4814-8d02-e0d2cd0d384e">
+                    <property name="com.jaspersoft.studio.unit.x" value="px"/>
+                </reportElement>
+            </line>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="35" splitType="Stretch">
+            <textField>
+                <reportElement x="280" y="2" width="100" height="30" uuid="1b5e141d-248a-4588-b6ed-1d82dd781e6b">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID"
+                              value="7ffe3e7e-2a0d-4545-8de9-412c82c1b4e9"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font size="11"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{stringTime}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="380" y="0" width="100" height="30" uuid="654501ba-b8ee-4047-bb0d-bc4da727226c">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID"
+                              value="76e994f4-a580-4be9-b9ce-34b6d1c7b4fe"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font size="11"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{sum}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="100" y="2" width="80" height="30" uuid="26029f44-09c5-4554-a3d4-2b5c79b16f32">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID"
+                              value="b51e232b-b252-4d63-8243-872b3afed432"/>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font fontName="DejaVu Sans" size="11"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="54" splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band height="50" splitType="Stretch">
+            <textField>
+                <reportElement x="440" y="10" width="57" height="30" uuid="8702b65f-d125-4d76-ab45-68677e8a9414"/>
+                <textElement textAlignment="Right"/>
+                <textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <textField evaluationTime="Report">
+                <reportElement x="500" y="10" width="50" height="30" uuid="f6114836-ddf6-4545-8cbf-03c352e6500f"/>
+                <textElement textAlignment="Left"/>
+                <textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <textField pattern="MM, dd, yyyy">
+                <reportElement x="80" y="10" width="100" height="30" uuid="3e6f3f52-d86e-4c45-8531-734afacd4022"/>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+        </band>
+    </summary>
+</jasperReport>
